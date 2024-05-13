@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/onboardFragment">
+
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.geeks.my_app_4_2.ui.fragments.notes.NoteFragment"
+        android:label="fragment_note"
+        tools:layout="@layout/fragment_note" />
+    <fragment
+        android:id="@+id/onboardFragment"
+        android:name="com.geeks.my_app_4_2.ui.fragments.onboard.OnboardFragment"
+        android:label="fragment_onboard"
+        tools:layout="@layout/fragment_onboard" />
+    <fragment
+        android:id="@+id/onboardViewPagerFragment"
+        android:name="com.geeks.my_app_4_2.ui.fragments.onboard.OnboardViewPagerFragment"
+        android:label="fragment_onboard_view_pager"
+        tools:layout="@layout/fragment_onboard_view_pager" >
+        <action
+            android:id="@+id/action_onboardViewPagerFragment_to_noteFragment"
+            app:destination="@id/noteFragment"
+            app:popUpTo="@id/onboardFragment"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+
+</navigation>
