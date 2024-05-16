@@ -5,18 +5,39 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.geeks.my_app_4_2.R
+import com.geeks.my_app_4_2.databinding.FragmentNoteBinding
+import com.geeks.my_app_4_2.utils.PreferenceHelper
+
 
 class NoteFragment : Fragment() {
+
+    private lateinit var binding: FragmentNoteBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_note, container, false)
-
-
+        binding = FragmentNoteBinding.inflate(inflater, container, false)
+        return binding.root
 
             }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setuplisteners()
     }
+
+    private fun setuplisteners() = with(binding){
+
+        val preferenceHelper = PreferenceHelper(requireContext())
+        preferenceHelper.unit(requireContext())
+
+        saveBtn.setOnClickListener{
+            val et = edText.text.toString()
+            preferenceHelper.title = et
+            saveText.text = et
+        }
+        saveText.text = preferenceHelper.title
+
+    }
+}
