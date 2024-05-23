@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.devtools.ksp")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -60,4 +62,10 @@ dependencies {
 
     //dotIndicator
     implementation ("com.google.android.material:material:1.5.0")
+
+    //room
+    val roomVersion = "2.6.1"
+    implementation("androidx.room:room-ktx:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
+
 }

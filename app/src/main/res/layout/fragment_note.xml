@@ -3,30 +3,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp"
+    android:background="@color/black"
     tools:context=".ui.fragments.notes.NoteFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+        
+        <ImageView
+            android:id="@+id/list_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/menu"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="100dp"
+            android:text="Заметки"
+            android:textSize="24sp"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/layout_changer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/grid" />
+
+
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/ed_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:hint="Enter text:"/>
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/search"
+        android:hint="Поиск заметок"
+        android:paddingStart="16dp"
+        android:textColorHint="@color/grey" />
 
-    <TextView
-        android:id="@+id/save_text"
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_note"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_marginTop="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_note"/>
+
+    <ImageButton
+        android:id="@+id/add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:layout_marginTop="20dp" />
-    <Button
-        android:id="@+id/save_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Save"
-        android:layout_marginTop="20dp"/>
+        tools:text = "add"
+        android:src="@drawable/add_button"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="end"/>
 
 </LinearLayout>

@@ -13,7 +13,6 @@ class PreferenceHelper(mainActivity: Context) {
     fun unit(context: Context){
         sharedPreference = context.getSharedPreferences("shared", Context.MODE_PRIVATE)
     }
-
     var title: String?
         get() = sharedPreference.getString("title", "")
         set(value) = sharedPreference.edit().putString("title", value)!!.apply()
