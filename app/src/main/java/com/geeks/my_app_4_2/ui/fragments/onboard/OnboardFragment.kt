@@ -61,7 +61,7 @@ class OnboardFragment : Fragment() {
         }
         binding.initTv.setOnClickListener{
             preferenceHelper.isOnboardShown = true
-            findNavController().navigate(R.id.action_onboardFragment_to_noteFragment)
+            findNavController().navigate(R.id.action_onboardFragment_to_signUpFragment)
         }
     }
 }

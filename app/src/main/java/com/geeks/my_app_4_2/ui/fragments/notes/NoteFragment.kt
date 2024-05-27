@@ -36,7 +36,7 @@ class NoteFragment : Fragment(), OnClickItem {
         initialize()
         setupListeners()
         getData()
-        updateLayoutChangerIcon()
+
     }
     private fun initialize(){
         binding.rvNote.apply {
@@ -56,6 +56,7 @@ class NoteFragment : Fragment(), OnClickItem {
                 LinearLayoutManager(requireContext())
             }
             binding.rvNote.layoutManager = layoutManager
+            updateLayoutChangerIcon()
         }
     }
     private fun updateLayoutChangerIcon() {
@@ -74,7 +75,7 @@ class NoteFragment : Fragment(), OnClickItem {
     override fun onLongClick(noteModel: NoteModel) {
         val builder = AlertDialog.Builder(requireContext())
         with(builder){
-            setTitle("Are you sure,do you want to delete?")
+            setTitle("Are you sure, you want to delete?")
             setPositiveButton("Yes"){dialog, which->
                 App().getInstance()?.noteDao()?.deleteNote(noteModel)
 

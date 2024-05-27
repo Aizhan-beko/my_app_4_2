@@ -20,10 +20,12 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(androidx.navigation.fragment.R.id.nav_host_fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
 
-        if (preferenceHelper.isOnboardShown) {
+        if (preferenceHelper.isOnboardShown && preferenceHelper.isSignupShown) {
             navController.navigate(R.id.noteFragment)
-            } else {
-                    navController.navigate(R.id.onboardFragment)
+        } else if (!preferenceHelper.isSignupShown && preferenceHelper.isOnboardShown) {
+            navController.navigate(R.id.signUpFragment)
+        } else {
+            navController.navigate(R.id.onboardFragment)
         }
     }
 }

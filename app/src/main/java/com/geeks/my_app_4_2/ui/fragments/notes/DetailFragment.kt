@@ -59,15 +59,6 @@ class DetailFragment : Fragment() {
         }
     }
 
-    private fun setUpClickListener() {
-        binding.readyTv.setOnClickListener {
-            saveNoteToDatabase()
-            if (isAdded) {
-                findNavController().navigateUp()
-            }
-        }
-    }
-
     private fun setDateTime() {
         val currentTime = Calendar.getInstance().time
         val timeFormatter = SimpleDateFormat("HH:mm", Locale.getDefault())
@@ -103,7 +94,9 @@ class DetailFragment : Fragment() {
             )
             App().getInstance()?.noteDao()?.insertNote(note)
             lifecycleScope.launch(Dispatchers.Main) {
-                findNavController().navigateUp()
+                //if (isAdded) {
+                    //findNavController().popBackStack()
+
             }
         }
     }
@@ -167,5 +160,15 @@ class DetailFragment : Fragment() {
         val isDescriptionFilled = binding.descriptionTv.text.toString().isNotEmpty()
 
         binding.readyTv.isEnabled = isTitleFilled && isDescriptionFilled
+    }
+        private fun setUpClickListener() {
+            binding.readyTv.setOnClickListener {
+                saveNoteToDatabase()
+                findNavController().navigateUp()
+
+            }
+            binding.blackArrowImg.setOnClickListener{
+                findNavController().navigate(R.id.action_detailFragment_to_noteFragment)
+            }
     }
 }

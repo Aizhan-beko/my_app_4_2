@@ -20,4 +20,8 @@ class PreferenceHelper(mainActivity: Context) {
     var isOnboardShown: Boolean
         get() = sharedPreference.getBoolean("board", false)
         set(value) = sharedPreference.edit().putBoolean("board", value).apply()
+
+    var isSignupShown: Boolean
+        get() = sharedPreference.getBoolean("signup",false)
+        set(value) = sharedPreference.edit().putBoolean("signup", value).apply()
 }
