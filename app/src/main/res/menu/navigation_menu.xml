@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/note_nav_menu"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Note Fragment" />
+    <item
+        android:id="@+id/chat_nav_menu"
+        android:icon="@android:drawable/ic_dialog_email"
+        android:title="Chat Fragment" />
+    <item
+        android:id="@+id/signup_nav"
+        android:icon="@drawable/baseline_assignment_ind_24"
+        android:title="SignUp Fragment"/>
+    <item
+        android:id="@+id/onboard_nav"
+        android:icon="@drawable/access"
+        android:title="Onboard Fragment"/>
+    <item
+        android:id="@+id/detail_nav"
+        android:icon="@drawable/detail"
+        android:title="Note detail Fragment"/>
+
+</menu>

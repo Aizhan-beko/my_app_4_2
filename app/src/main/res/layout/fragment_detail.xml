@@ -14,9 +14,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:padding="16dp" >
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <ImageView
             android:id="@+id/black_arrow_img"
@@ -24,34 +24,34 @@
             android:layout_height="21dp"
             android:src="@drawable/baseline_arrow_back_24" />
 
-    <TextView
-        android:id="@+id/tv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="date"
-        android:textColor="@color/white"
-        android:textSize="21sp"
-        android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            tools:text="date" />
 
-    <TextView
-        android:id="@+id/tv_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="time"
-        android:textColor="@color/white"
-        android:textSize="21sp"
-        android:layout_marginLeft="20dp"/>
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            tools:text="time" />
 
-    <TextView
-        android:id="@+id/ready_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = "Готово"
-        android:layout_marginLeft="80dp"
-        android:textSize="21sp"
-        android:textColor="@color/orange"/>
+        <TextView
+            android:id="@+id/ready_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:text="Готово"
+            android:textColor="@color/orange"
+            android:textSize="21sp" />
 
-</LinearLayout>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

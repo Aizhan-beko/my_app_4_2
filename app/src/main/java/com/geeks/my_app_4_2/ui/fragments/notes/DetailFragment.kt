@@ -94,8 +94,6 @@ class DetailFragment : Fragment() {
             )
             App().getInstance()?.noteDao()?.insertNote(note)
             lifecycleScope.launch(Dispatchers.Main) {
-                //if (isAdded) {
-                    //findNavController().popBackStack()
 
             }
         }

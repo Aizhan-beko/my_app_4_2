@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    tools:context=".ui.fragments.chat.ChatFragment">
+
+    <LinearLayout
+        android:id="@+id/direction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_grey"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/back_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_grey"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/back" />
+        <TextView
+            android:id="@+id/tv_direction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:text="Enjoy while chating"
+            android:layout_marginHorizontal="50dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/orange"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_chat"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="20dp" />
+
+
+        <Button
+            android:id="@+id/send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="150dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/dark_grey"
+            android:text = "send ->"
+            android:textSize="20sp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="start to type:"
+            android:textColorHint="@color/orange"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/edit_chat"/>
+
+
+    </LinearLayout>
+
+
+
+
