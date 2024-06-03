@@ -30,13 +30,13 @@ class NoteFragment : Fragment(), OnClickItem {
     ): View? {
         binding = FragmentNoteBinding.inflate(inflater, container, false)
         return binding.root
-
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
         setupListeners()
+        opendrawer()
+        updateLayoutChangerIcon()
         getData()
 
     }
@@ -105,7 +105,6 @@ class NoteFragment : Fragment(), OnClickItem {
         }
         builder.create()
     }
-
     override fun onClick(noteModel: NoteModel) {
         val action = NoteFragmentDirections.actionNoteFragmentToDetailFragment(noteModel.id)
         findNavController().navigate(action)
